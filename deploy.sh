@@ -4,11 +4,11 @@ docker build -t jawade/multi-worker:latest -t jawade/multi-worker:$SHA -f ./work
 
 docker push jawade/multi-client:latest
 docker push jawade/multi-server:latest
-docker push jawad/multi-worker:latest
+docker push jawade/multi-worker:latest
 
 docker push jawade/multi-client:$SHA
 docker push jawade/multi-server:$SHA
-docker push jawad/multi-worker:$SHA
+docker push jawade/multi-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=jawade/multi-server:$SHA
